@@ -70,7 +70,7 @@ export function TransactionDetailsDialog({ open, onOpenChange, transaction }: Tr
               <Tag className="h-5 w-5 text-muted-foreground" />
               <div className="flex-1">
                 <p className="text-sm font-medium text-muted-foreground">Category</p>
-                <Badge variant="outline">{transaction.category}</Badge>
+                <Badge variant="outline">{transaction.category?.label}</Badge>
               </div>
             </div>
 
@@ -78,7 +78,7 @@ export function TransactionDetailsDialog({ open, onOpenChange, transaction }: Tr
               <CreditCard className="h-5 w-5 text-muted-foreground" />
               <div className="flex-1">
                 <p className="text-sm font-medium text-muted-foreground">Account</p>
-                <p className="text-sm">{transaction.account}</p>
+                <p className="text-sm">{transaction.account?.label}</p>
               </div>
             </div>
           </div>
@@ -90,12 +90,12 @@ export function TransactionDetailsDialog({ open, onOpenChange, transaction }: Tr
             <div>
               <p className="text-sm font-medium text-muted-foreground mb-2">Status</p>
               <Badge
-                variant={transaction.status === "completed" ? "default" : "secondary"}
+                variant={transaction.status?.label === "completed" ? "default" : "secondary"}
                 className={
-                  transaction.status === "completed" ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800"
+                  transaction.status?.label === "completed" ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800"
                 }
               >
-                {transaction.status}
+                {transaction.status?.label}
               </Badge>
             </div>
           </div>
