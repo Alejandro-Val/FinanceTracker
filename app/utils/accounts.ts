@@ -53,6 +53,7 @@ export const listenToAllAccounts = (
           institution: data.institution,
           color: data.color,
           transactions: data.transactions,
+          user_id: data.user_id
         };
       })
     );
